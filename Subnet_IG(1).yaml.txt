@@ -21,7 +21,7 @@ Resources:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       SubnetId: !Ref PublicSubnet1
-      RouteTableId:                                    #specify the default route table id 
+      RouteTableId: rtb-08966ffb139511179                   
 
   PublicSubnet2:
     Type: AWS::EC2::Subnet
@@ -60,6 +60,6 @@ Resources:
     Type: AWS::EC2::Route
     DependsOn: AttachGateway
     Properties:
-      RouteTableId:                                         #specify the default route table id 
+      RouteTableId: rtb-08966ffb139511179                                        
       DestinationCidrBlock: "0.0.0.0/0"
       GatewayId: !Ref MyInternetGateway
